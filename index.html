@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FizzBuzz</title>
+</head>
+<body>
+    <h1>Get a FizzBuzz Result!</h1>
+    <form>
+        Type a number:
+        <input type="text" id="numb">
+        <button type="button" onclick="myFunction()">Click Here!</button>
+    </form>
+    <p>_________________________________________________</p>
+    <p id="text"></p>
+
+    <script>
+        function myFunction(){
+            let x = document.getElementById('numb').value;
+            let teks;
+            if(x%3===0 && x%5==0){
+                if(isNaN(x) || x<1 || x>100){
+                    teks = "Invalid Input";
+                } else {
+                    teks = "FizzBuzz!";
+                }
+            } else if(x%3==0){
+                if(isNaN(x) || x<1 || x>100){
+                    teks = "Invalid Input";
+                } else {
+                    teks = "Fizz!";
+                }
+            } else if(x%5==0){
+                if(isNaN(x) || x<1 || x>100){
+                    teks = "Invalid Input";
+                } else {
+                    teks = "Buzz!";
+                }
+            } else if(x>100){
+                teks = "Invalid input";
+            } else{
+                teks = x;
+            }
+            console.log(x);
+            document.getElementById('text').innerHTML += teks + "<br>";
+        }
+    </script>
+</body>
+</html>
